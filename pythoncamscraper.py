@@ -1,71 +1,77 @@
 # %%
-import pytz
 from datetime import datetime
-import time, requests, os
-import glob
-import boto3
+import os
 import pandas as pd
+import pytz
+import requests
+import traceback
 
 
-def configure_folders():
-     for camera in camera_ids:
-        path = f'{img_dir}/{camera}'
-        pathExists = os.path.exists(path)
-        if not pathExists:
+def create_directories(img_dir, camera_ids):
+    for camera in camera_ids:
+        path = os.path.join(img_dir, camera)
+
+        if not os.path.exists(path):
             print(f"Creating path for camera {camera}")
             os.makedirs(path)
         else:
-             print(f"Path for camera {camera} exists")
+            print(f"Path for camera {camera} exists")
 
-def capture_all_cameras(url_front,camera_id):
-    currentTimeDate = datetime.now().astimezone(pytz.timezone('America/Denver')).strftime('%Y-%m-%d-%H-%M-%S')
-    print(f"Capture at {currentTimeDate}")
 
-    # Combines the URL
-    url = f'{url_front} {camera_id}'
+def capture_camera(row):
+    camera_id = row["camera_id"]
+    img_dir = row["img_dir"]
+    url_front = row["url_front"]
+    img_type = row["img_type"]
+
+    time_zone = pytz.timezone("America/Denver")
+    timestamp = (
+        datetime
+            .now()
+            .astimezone(time_zone)
+            .strftime("%Y-%m-%d-%H-%M-%S")
+            #.isoformat().replace(":", "-") # cleaner alternative in the future
+    )
+    print(f"Capture at {timestamp}")
+
+    url = f"{url_front} {camera_id}"
     print(url)
-    print(f'{img_dir}/{camera_id}/{camera_id}-{currentTimeDate}.{img_type}')
+
     try:
-        r = requests.get(url, allow_redirects=True)
-        with open(f'{img_dir}/{camera_id}/{camera_id}-{currentTimeDate}.jpg', 'wb') as file:
-            file.write(r.content)
+        response = requests.get(url, allow_redirects=True)
+        response.raise_for_status()
+        img_path = os.path.join(img_dir, camera_id, f"{timestamp}.{img_type}")
+        print(img_path)
+
+        with open(img_path, "wb") as file:
+            file.write(response.content)
 
         status = "success"
     except requests.ConnectionError:
         status = "ERROR (network)"
     except OSError:
+        print(traceback.format_exc())
         status = "ERROR (file)"
     except:
+        print(traceback.format_exc())
         status = "ERROR (other)"
+
     print(f"\t{camera_id}  \t\t {status}")
 
-def runCameras():
-    df['filename'] = df.apply(lambda x: capture_all_cameras(x['url_front'],
-                                                            x['camera_id'],
-                                                           ),
-                              axis=1)
-    
-    return None
 
-#Read in CSV
-df = pd.read_csv('COCams.csv',sep=';')
+def main():
+    df = pd.read_csv("MtnCams.csv", sep=";")
+    pattern = r"[<>:'/\\\|\*\s]"
+    df["camera_id"] = df["location"].str.replace(pattern, "_", regex=True)
+    df = df.drop(df.columns[-1], axis=1)
 
-#Populate camera_id column with camera_id based on the url
-df['camera_id'] = df['location'].str.replace(r'[<|>|:|"|/|\\|\||\*|\s]','_', regex=True)
-#df['camera_id'] = df['url_front'].str.extract('.+/(.+)\.jpg')
+    for img_dir, group in df.groupby("img_dir"):
+        camera_ids = set(df["camera_id"].tolist())
+        create_directories(img_dir, camera_ids)
 
-#Hardcode img_dir and img_type
-img_dir = './Cams'
-img_type = 'jpg'
-
-#Create list of camera_ids for configure_folders function
-camera_ids = list(set(df['camera_id'].tolist()))
-
-#Run configure_folders to check if folders exist and, if not, create them
-configure_folders()
-
-while(True):
-    runCameras()
-    quit()
+        for _, row in group.iterrows():
+            capture_camera(row)
 
 
+if __name__ == "__main__":
+    main()
