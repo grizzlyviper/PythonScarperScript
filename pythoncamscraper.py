@@ -48,14 +48,14 @@ def runCameras():
     return None
 
 #Read in CSV
-df = pd.read_csv('MtnCams.csv',sep=';')
+df = pd.read_csv('COCams.csv',sep=';')
 
 #Populate camera_id column with camera_id based on the url
 df['camera_id'] = df['location'].str.replace(r'[<|>|:|"|/|\\|\||\*|\s]','_', regex=True)
 #df['camera_id'] = df['url_front'].str.extract('.+/(.+)\.jpg')
 
 #Hardcode img_dir and img_type
-img_dir = './NMtns'
+img_dir = './Cams'
 img_type = 'jpg'
 
 #Create list of camera_ids for configure_folders function
