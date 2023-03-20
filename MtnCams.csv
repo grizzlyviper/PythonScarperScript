@@ -1,17 +1,17 @@
-location;spec_loc;url_front;camera_id;img_type;img_dir;
-Cameron Pass - West facing;CO 14 MP 061.15 EB : 3.7 miles W of Cameron Pass;https://cocam.carsprogram.org/Live_View/CO14061West.jpg?;Cameron Pass - West facing;jpg;NMtns;
-Cameron Pass - West facing;CO 14 MP 063.65 EB : 1.2 miles W of Cameron Pass;https://cocam.carsprogram.org/Live_View/CO14063West.jpg?;Cameron Pass - West facing;jpg;NMtns;
-Cameron Pass - East facing;CO 14 MP 063.65 EB : 1.2 miles W of Cameron Pass;https://cocam.carsprogram.org/Live_View/CO14063East.jpg?;Cameron Pass - East facing;jpg;NMtns;
-Rabbit Ears Pass - East facing;5.5 miles West of Rabbit Ears;https://cocam.carsprogram.org/Live_View/US40147East.jpg?;Rabbit Ears Pass - East facing;jpg;NMtns;
-Rabbit Ears Pass - West facing;5.5 miles West of Rabbit Ears;https://cocam.carsprogram.org/Live_View/US40147West.jpg?;Rabbit Ears Pass - West facing;jpg;NMtns;
-Muddy Pass - West Facing;MP 157.35 EB at CO 14;https://cocam.carsprogram.org/Live_View/US40157West.jpg?;Muddy Pass - West Facing;jpg;NMtns;
-Muddy Pass - East Facing;MP 157.35 EB at CO 14;https://cocam.carsprogram.org/Live_View/US40157East.jpg?;Muddy Pass - East Facing;jpg;NMtns;
-Wyoming Border - Facing North;CO 127 MP 007.45 SB : 2.2 miles S of Wyoming Border;https://cocam.carsprogram.org/Live_View/CO127007North.jpg?;Wyoming Border - Facing North;jpg;NMtns;
-Wyoming Border - Facing South;CO 127 MP 007.45 SB : 2.2 miles S of Wyoming Border;https://cocam.carsprogram.org/Live_View/CO127007South.jpg?;Wyoming Border - Facing South;jpg;NMtns;
-Hwy 40 - Facing West;US 40 MP 040.35 WB at Elk Spings Ranch;https://cocam.carsprogram.org/Cellular/040W04035CAM1RHS-W.jpg?;Hwy 40 - Facing West;jpg;NMtns;
-Hwy 40 - Facing East;US 40 MP 040.35 WB at Elk Spings Ranch;https://cocam.carsprogram.org/Cellular/040W04035CAM1RHS-E.jpg?;Hwy 40 - Facing East;jpg;NMtns;
-Douglas Pass - Facing North;CO 139 MP 034.85 NB at Douglas Pass;https://cocam.carsprogram.org/Cellular/139N03485CAM1RHS-N.jpg?;Douglas Pass - Facing North;jpg;NMtns;
-Douglas Pass - Facing South;CO 139 MP 034.85 NB at Douglas Pass;https://cocam.carsprogram.org/Cellular/139N03485CAM1RHS-S.jpg?;Douglas Pass - Facing South;jpg;NMtns;
-Steamboat - Mt Werner Rd - Looking North;US 40 MP 134.45 WB - North View;https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-N.jpg?;Steamboat - Mt Werner Rd - Looking North;jpg;NMtns;
-Steamboat - Mt Werner Rd: Looking East;US 40 MP 134.45 WB - East View;https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-E.jpg?;Steamboat - Mt Werner Rd: Looking East;jpg;NMtns;
-Steamboat - Mt Werner Rd: Looking West;US 40 MP 134.45 WB - West View;https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-W.jpg?;Steamboat - Mt Werner Rd: Looking West;jpg;NMtns;
+location,spec_loc,url_front,camera_id,img_type,img_dir,coords
+Cameron Pass West facing,CO 14 MP 061.15 EB : 3.7 miles W of Cameron Pass,https://cocam.carsprogram.org/Live_View/CO14061West.jpg?,Cameron Pass West facing,jpg,NMtns,
+Cameron Pass West facing,CO 14 MP 063.65 EB : 1.2 miles W of Cameron Pass,https://cocam.carsprogram.org/Live_View/CO14063West.jpg?,Cameron Pass West facing,jpg,NMtns,
+Cameron Pass East facing,CO 14 MP 063.65 EB : 1.2 miles W of Cameron Pass,https://cocam.carsprogram.org/Live_View/CO14063East.jpg?,Cameron Pass East facing,jpg,NMtns,
+Rabbit Ears Pass East facing,5.5 miles West of Rabbit Ears,https://cocam.carsprogram.org/Live_View/US40147East.jpg?,Rabbit Ears Pass East facing,jpg,NMtns,
+Rabbit Ears Pass West facing,5.5 miles West of Rabbit Ears,https://cocam.carsprogram.org/Live_View/US40147West.jpg?,Rabbit Ears Pass West facing,jpg,NMtns,
+Muddy Pass West Facing,MP 157.35 EB at CO 14,https://cocam.carsprogram.org/Live_View/US40157West.jpg?,Muddy Pass West Facing,jpg,NMtns,
+Muddy Pass East Facing,MP 157.35 EB at CO 14,https://cocam.carsprogram.org/Live_View/US40157East.jpg?,Muddy Pass East Facing,jpg,NMtns,
+Wyoming Border Facing North,CO 127 MP 007.45 SB : 2.2 miles S of Wyoming Border,https://cocam.carsprogram.org/Live_View/CO127007North.jpg?,Wyoming Border Facing North,jpg,NMtns,
+Wyoming Border Facing South,CO 127 MP 007.45 SB : 2.2 miles S of Wyoming Border,https://cocam.carsprogram.org/Live_View/CO127007South.jpg?,Wyoming Border Facing South,jpg,NMtns,
+Hwy 40 Facing West,US 40 MP 040.35 WB at Elk Spings Ranch,https://cocam.carsprogram.org/Cellular/040W04035CAM1RHS-W.jpg?,Hwy 40 Facing West,jpg,NMtns,
+Hwy 40 Facing East,US 40 MP 040.35 WB at Elk Spings Ranch,https://cocam.carsprogram.org/Cellular/040W04035CAM1RHS-E.jpg?,Hwy 40 Facing East,jpg,NMtns,
+Douglas Pass Facing North,CO 139 MP 034.85 NB at Douglas Pass,https://cocam.carsprogram.org/Cellular/139N03485CAM1RHS-N.jpg?,Douglas Pass Facing North,jpg,NMtns,
+Douglas Pass Facing South,CO 139 MP 034.85 NB at Douglas Pass,https://cocam.carsprogram.org/Cellular/139N03485CAM1RHS-S.jpg?,Douglas Pass Facing South,jpg,NMtns,
+Steamboat Mt Werner Rd : Looking North,US 40 MP 134.45 WB - North View,https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-N.jpg?,Steamboat Mt Werner Rd - Looking North,jpg,NMtns,
+Steamboat Mt Werner Rd: Looking East,US 40 MP 134.45 WB - East View,https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-E.jpg?,Steamboat Mt Werner Rd: Looking East,jpg,NMtns,
+Steamboat Mt Werner Rd: Looking West,US 40 MP 134.45 WB - West View,https://cocam.carsprogram.org/Cellular/040W13445CAM1RHS-W.jpg?,Steamboat Mt Werner Rd: Looking West,jpg,NMtns,
