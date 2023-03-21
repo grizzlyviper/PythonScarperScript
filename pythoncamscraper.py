@@ -29,8 +29,8 @@ def capture_camera(row):
         datetime
             .now()
             .astimezone(time_zone)
-            .strftime("%Y-%m-%d-%H-%M-%S")
-            #.isoformat().replace(":", "-") # cleaner alternative in the future
+            .isoformat()
+            .replace(":", "_")
     )
     print(f"Capture at {timestamp}")
 
@@ -60,7 +60,7 @@ def capture_camera(row):
 
 
 def main():
-    df = pd.read_csv("MtnCams.csv", sep=",")
+    df = pd.read_csv("COCams.csv", sep=";")
     pattern = r"[<>:'/\\\|\*\s]"
     df["camera_id"] = df["location"].str.replace(pattern, "_", regex=True)
     df = df.drop(df.columns[-1], axis=1)
