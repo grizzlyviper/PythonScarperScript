@@ -60,7 +60,7 @@ def capture_camera(row):
 
 
 def main():
-    df = pd.read_csv("MtnCams.csv", sep=";")
+    df = pd.read_csv("MtnCams.csv", sep=",")
     pattern = r"[<>:'/\\\|\*\s]"
     df["camera_id"] = df["location"].str.replace(pattern, "_", regex=True)
     df = df.drop(df.columns[-1], axis=1)
